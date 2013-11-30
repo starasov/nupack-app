@@ -9,7 +9,7 @@ public class MaterialMarkupCalculator implements MarkupCalculator {
 
     @NotNull
     public Job calculate(@NotNull Job job) {
-        Material material = job.getMaterial();
-        return job.updatePrice(material.applyMarkup(job.getPrice()));
+        Markup materialMarkup = job.getMaterial().getMarkup();
+        return job.updatePrice(materialMarkup.calculate(job.getPrice()));
     }
 }
