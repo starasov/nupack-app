@@ -13,6 +13,16 @@ import static com.nupack.Asserts.assertBigDecimalEquals;
  */
 public class JobTest {
 
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldNotBeAbleToCreateJobWithNegativeBasePrice() {
+        Job.create("-1.0", 0, "any");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldNotBeAbleToCreateJobWithNegativeNumberOfPeople() {
+        Job.create("1.0", -1, "any");
+    }
+
     @Test
     public void applyMarkupShouldRoundUp() {
         Job job = jobWithPrice("1364.9895").applyMarkup(Markup.valueOf("16.6"));
