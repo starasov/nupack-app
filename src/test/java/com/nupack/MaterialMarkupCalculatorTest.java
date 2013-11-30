@@ -25,7 +25,7 @@ public class MaterialMarkupCalculatorTest {
     @Test
     public void shouldCorrectlyCalculateMarkupForDefaultMaterial() {
         Job jobWithDefaultMaterial = new Job(new BigDecimal("100.0"), 0, Material.DEFAULT);
-        BigDecimal markup = materialMarkupCalculator.calculate(jobWithDefaultMaterial);
-        assertThat(markup, is(new BigDecimal("100.0")));
+        Job result = materialMarkupCalculator.calculate(jobWithDefaultMaterial);
+        assertThat(result.getPrice(), is(new BigDecimal("100.0")));
     }
 }
