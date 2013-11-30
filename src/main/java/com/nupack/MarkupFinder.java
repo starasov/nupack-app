@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Defines generic markup calculation contract.
  */
-public interface MarkupCalculator {
+public interface MarkupFinder {
     @NotNull
-    Job calculate(@NotNull Job job);
+    Markup find(@NotNull Job job);
 }

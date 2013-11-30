@@ -7,16 +7,28 @@ import java.util.List;
 /**
  * Aggregate calculator for summary markup value calculation.
  */
-public class SummaryMarkupCalculator implements MarkupCalculator {
+public class SummaryMarkupCalculator {
 
-    private final List<MarkupCalculator> markupCalculators;
+    static Markup FLAT_MARKUP = Markup.valueOf("5.0");
 
-    public SummaryMarkupCalculator(List<MarkupCalculator> markupCalculators) {
-        this.markupCalculators = markupCalculators;
+    private final List<MarkupFinder> markupFinders;
+
+    public SummaryMarkupCalculator(List<MarkupFinder> markupFinders) {
+        this.markupFinders = markupFinders;
     }
 
     @NotNull
     public Job calculate(@NotNull Job job) {
-        return null;
+        return job.applyMarkup(FLAT_MARKUP).applyMarkup(findAdditionalMarkup(job));
+    }
+
+    private Markup findAdditionalMarkup(Job job) {
+        Markup summaryMarkup = Markup.valueOf("0.0");
+
+        for (MarkupFinder markupFinder : markupFinders) {
+            summaryMarkup = summaryMarkup.add(markupFinder.find(job));
+        }
+
+        return summaryMarkup;
     }
 }

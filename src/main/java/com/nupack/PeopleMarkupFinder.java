@@ -7,14 +7,13 @@ import org.jetbrains.annotations.NotNull;
  * Date: 11/30/13
  * Time: 12:33 AM
  */
-public class PeopleMarkupCalculator implements MarkupCalculator {
+public class PeopleMarkupFinder implements MarkupFinder {
 
     static final Markup BASE_MARKUP = Markup.valueOf("1.2");
 
     @NotNull
-    public Job calculate(@NotNull Job job) {
+    public Markup find(@NotNull Job job) {
         int numberOfPeople = job.getNumberOfPeople();
-        Markup markup = BASE_MARKUP.multiply(numberOfPeople);
-        return job.updatePrice(markup.calculate(job.getPrice()));
+        return BASE_MARKUP.multiply(numberOfPeople);
     }
 }
