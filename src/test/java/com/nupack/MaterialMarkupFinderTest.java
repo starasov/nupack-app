@@ -34,6 +34,6 @@ public class MaterialMarkupFinderTest {
     }
 
     private static Job jobWithMaterial(Material material) {
-        return new Job(new BigDecimal("100.0"), 0, material);
+        return Job.create(new BigDecimal("100.0"), 0, material);
     }
 }

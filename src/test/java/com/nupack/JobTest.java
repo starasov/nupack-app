@@ -26,6 +26,6 @@ public class JobTest {
     }
 
     private static Job jobWithPrice(String price) {
-        return new Job(new BigDecimal(price), 0, Material.DEFAULT);
+        return Job.create(new BigDecimal(price), 0, Material.DEFAULT);
     }
 }

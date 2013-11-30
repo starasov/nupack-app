@@ -24,7 +24,7 @@ public class SummaryMarkupCalculatorTest {
 
     @Test
     public void shouldAlwaysCalculateFlatMarkup() {
-        Job jobWithMarkup = summaryMarkupCalculator.calculate(new Job(new BigDecimal("100.0"), 0, Material.DEFAULT));
+        Job jobWithMarkup = summaryMarkupCalculator.calculate(Job.create(new BigDecimal("100.0"), 0, Material.DEFAULT));
         assertBigDecimalEquals(jobWithMarkup.getPrice(), "105.0");
     }
 

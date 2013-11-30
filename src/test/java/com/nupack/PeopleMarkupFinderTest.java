@@ -43,6 +43,6 @@ public class PeopleMarkupFinderTest {
     }
 
     private static Job jobWithPeople(int numberOfPeople) {
-        return new Job(new BigDecimal("100.0"), numberOfPeople, Material.DEFAULT);
+        return Job.create(new BigDecimal("100.0"), numberOfPeople, Material.DEFAULT);
     }
 }
