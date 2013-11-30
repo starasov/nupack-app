@@ -22,8 +22,13 @@ public class Markup {
     }
 
     @NotNull
-    BigDecimal calculate(@NotNull BigDecimal initialPrice) {
+    public BigDecimal calculate(@NotNull BigDecimal initialPrice) {
         BigDecimal markupMultiplier = markupInPercents.divide(new BigDecimal("100.0"));
         return initialPrice.add(initialPrice.multiply(markupMultiplier));
+    }
+
+    @NotNull
+    public Markup multiply(int times) {
+        return new Markup(markupInPercents.multiply(new BigDecimal(times)));
     }
 }
