@@ -5,8 +5,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static com.nupack.Asserts.assertBigDecimalEquals;
 
 /**
  * User: starasov
@@ -26,6 +25,13 @@ public class MaterialMarkupCalculatorTest {
     public void shouldCorrectlyCalculateMarkupForDefaultMaterial() {
         Job jobWithDefaultMaterial = new Job(new BigDecimal("100.0"), 0, Material.DEFAULT);
         Job result = materialMarkupCalculator.calculate(jobWithDefaultMaterial);
-        assertThat(result.getPrice(), is(new BigDecimal("100.0")));
+        assertBigDecimalEquals(result.getPrice(), "100.0");
+    }
+
+    @Test
+    public void shouldCorrectlyCalculateMarkupForFood() {
+        Job jobWithDefaultMaterial = new Job(new BigDecimal("100.0"), 0, Material.FOOD);
+        Job result = materialMarkupCalculator.calculate(jobWithDefaultMaterial);
+        assertBigDecimalEquals(result.getPrice(), "113.0");
     }
 }
