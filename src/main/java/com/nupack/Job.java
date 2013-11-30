@@ -20,6 +20,10 @@ public class Job {
         this.material = material;
     }
 
+    Job updatePrice(BigDecimal newPrice) {
+        return new Job(newPrice, numberOfPeople, material);
+    }
+
     public BigDecimal getPrice() {
         return price;
     }
