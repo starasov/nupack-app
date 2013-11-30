@@ -6,9 +6,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * User: starasov
- * Date: 11/29/13
- * Time: 11:44 PM
+ * A repackaging job
  */
 public class Job {
     private final BigDecimal price;

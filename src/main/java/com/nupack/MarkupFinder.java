@@ -3,7 +3,7 @@ package com.nupack;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Defines generic markup calculation contract.
+ * Defines generic markup lookup contract.
  */
 public interface MarkupFinder {
     @NotNull

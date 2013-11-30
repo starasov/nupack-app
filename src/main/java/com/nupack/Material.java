@@ -3,9 +3,7 @@ package com.nupack;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * User: starasov
- * Date: 11/29/13
- * Time: 11:45 PM
+ * Job materials.
  */
 public enum Material {
     DEFAULT("<default>", Markup.valueOf("0.0")),

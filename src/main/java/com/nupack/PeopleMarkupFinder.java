@@ -3,9 +3,7 @@ package com.nupack;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * User: starasov
- * Date: 11/30/13
- * Time: 12:33 AM
+ * People markup finder.
  */
 public class PeopleMarkupFinder implements MarkupFinder {
 

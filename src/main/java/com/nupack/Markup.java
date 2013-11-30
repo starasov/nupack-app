@@ -5,9 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import java.math.BigDecimal;
 
 /**
- * User: starasov
- * Date: 11/30/13
- * Time: 12:37 AM
+ * A markup model
  */
 public class Markup {
     private final BigDecimal markupInPercents;

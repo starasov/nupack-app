@@ -3,7 +3,7 @@ package com.nupack;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Material markup calculator.
+ * Per-material markup finder.
  */
 public class MaterialMarkupFinder implements MarkupFinder {
 
