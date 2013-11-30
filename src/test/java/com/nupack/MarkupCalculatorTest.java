@@ -3,7 +3,6 @@ package com.nupack;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.math.BigDecimal;
 import java.util.Arrays;
 
 import static com.nupack.Asserts.assertBigDecimalEquals;
@@ -24,8 +23,14 @@ public class MarkupCalculatorTest {
 
     @Test
     public void shouldAlwaysCalculateFlatMarkup() {
-        Job jobWithMarkup = summaryMarkupCalculator.calculate(Job.create(new BigDecimal("100.0"), 0, Material.DEFAULT));
+        Job jobWithMarkup = summaryMarkupCalculator.calculate(Job.create("100.0", 0, "any"));
         assertBigDecimalEquals(jobWithMarkup.getPrice(), "105.0");
+    }
+
+    @Test
+    public void shouldCorrectlyCalculateMarkupForJobsWithZeroPrice() {
+        Job jobWithMarkup = summaryMarkupCalculator.calculate(Job.create("0.0", 1, "food"));
+        assertBigDecimalEquals(jobWithMarkup.getPrice(), "0.0");
     }
 
     @Test
