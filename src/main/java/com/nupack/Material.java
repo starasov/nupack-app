@@ -22,7 +22,8 @@ public enum Material {
     }
 
     @NotNull
-    public BigDecimal getMarkup() {
-        return markup;
+    public BigDecimal applyMarkup(@NotNull BigDecimal price) {
+        BigDecimal markupMultiplier = markup.divide(new BigDecimal("100.0"));
+        return price.add(price.multiply(markupMultiplier));
     }
 }
