@@ -13,13 +13,13 @@ import static com.nupack.Asserts.assertBigDecimalEquals;
  * Date: 11/30/13
  * Time: 12:56 AM
  */
-public class SummaryMarkupCalculatorTest {
+public class MarkupCalculatorTest {
 
-    private SummaryMarkupCalculator summaryMarkupCalculator;
+    private MarkupCalculator summaryMarkupCalculator;
 
     @Before
     public void setUp() throws Exception {
-        summaryMarkupCalculator = new SummaryMarkupCalculator(Arrays.asList(new MaterialMarkupFinder(), new PeopleMarkupFinder()));
+        summaryMarkupCalculator = new MarkupCalculator(Arrays.asList(new MaterialMarkupFinder(), new PeopleMarkupFinder()));
     }
 
     @Test

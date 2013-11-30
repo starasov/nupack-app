@@ -5,15 +5,15 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 /**
- * Aggregate calculator for summary markup value calculation.
+ * Calculator for summary markup value calculation.
  */
-public class SummaryMarkupCalculator {
+public class MarkupCalculator {
 
     static Markup FLAT_MARKUP = Markup.valueOf("5.0");
 
     private final List<MarkupFinder> markupFinders;
 
-    public SummaryMarkupCalculator(List<MarkupFinder> markupFinders) {
+    public MarkupCalculator(List<MarkupFinder> markupFinders) {
         this.markupFinders = markupFinders;
     }
 
