@@ -3,6 +3,7 @@ package com.nupack;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  * User: starasov
@@ -20,7 +21,13 @@ public class Job {
         this.material = material;
     }
 
-    Job updatePrice(BigDecimal newPrice) {
+    public static Job create(String price, int numberOfPeople, String materialName) {
+        return new Job(new BigDecimal(price), numberOfPeople, Material.findByName(materialName));
+    }
+
+    @NotNull
+    public Job applyMarkup(@NotNull Markup markup) {
+        BigDecimal newPrice = markup.calculate(price).setScale(2, RoundingMode.HALF_DOWN);
         return new Job(newPrice, numberOfPeople, material);
     }
 
