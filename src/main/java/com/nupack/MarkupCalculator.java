@@ -13,7 +13,7 @@ public class MarkupCalculator {
 
     private final List<MarkupFinder> markupFinders;
 
-    public MarkupCalculator(List<MarkupFinder> markupFinders) {
+    public MarkupCalculator(@NotNull List<MarkupFinder> markupFinders) {
         this.markupFinders = markupFinders;
     }
 

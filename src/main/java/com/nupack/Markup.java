@@ -19,6 +19,7 @@ public class Markup {
         return new Markup(new BigDecimal(percents));
     }
 
+    @NotNull
     public BigDecimal getMarkupInPercents() {
         return markupInPercents;
     }

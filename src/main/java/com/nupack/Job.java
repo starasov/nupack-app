@@ -19,6 +19,7 @@ public class Job {
         this.material = material;
     }
 
+    @NotNull
     public static Job create(@NotNull BigDecimal price, int numberOfPeople, @NotNull Material material) {
         if (price.doubleValue() < 0) {
             throw new IllegalArgumentException("Job price can't be less than zero.");
@@ -31,7 +32,8 @@ public class Job {
         return new Job(price, numberOfPeople, material);
     }
 
-    public static Job create(String price, int numberOfPeople, String materialName) {
+    @NotNull
+    public static Job create(@NotNull String price, int numberOfPeople, @NotNull String materialName) {
         return create(new BigDecimal(price), numberOfPeople, Material.findByName(materialName));
     }
 
@@ -41,6 +43,7 @@ public class Job {
         return new Job(newPrice, numberOfPeople, material);
     }
 
+    @NotNull
     public BigDecimal getPrice() {
         return price;
     }
@@ -49,6 +52,7 @@ public class Job {
         return numberOfPeople;
     }
 
+    @NotNull
     public Material getMaterial() {
         return material;
     }
