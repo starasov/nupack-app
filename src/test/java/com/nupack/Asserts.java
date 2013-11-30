@@ -11,11 +11,11 @@ final class Asserts {
     private Asserts() {
     }
 
-    static void assertBigDecimalEquals(BigDecimal expected, BigDecimal actual) {
-        assertTrue(expected.compareTo(actual) == 0);
+    static void assertBigDecimalEquals(BigDecimal actual, BigDecimal expected) {
+        assertTrue(actual + " should be equal to " + expected, expected.compareTo(actual) == 0);
     }
 
-    static void assertBigDecimalEquals(BigDecimal expected, String actual) {
-        assertTrue(expected.compareTo(new BigDecimal(actual)) == 0);
+    static void assertBigDecimalEquals(BigDecimal actual, String expected) {
+        assertTrue(actual + " should be equal to " + expected, actual.compareTo(new BigDecimal(expected)) == 0);
     }
 }
