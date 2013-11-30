@@ -21,14 +21,23 @@ public class Markup {
         return new Markup(new BigDecimal(percents));
     }
 
+    public BigDecimal getMarkupInPercents() {
+        return markupInPercents;
+    }
+
     @NotNull
     public BigDecimal calculate(@NotNull BigDecimal initialPrice) {
-        BigDecimal markupMultiplier = markupInPercents.divide(new BigDecimal("100.0"));
+        BigDecimal markupMultiplier = markupInPercents.movePointLeft(2); // divide markup percents by 100
         return initialPrice.add(initialPrice.multiply(markupMultiplier));
     }
 
     @NotNull
     public Markup multiply(int times) {
         return new Markup(markupInPercents.multiply(new BigDecimal(times)));
+    }
+
+    @NotNull
+    public Markup add(@NotNull Markup markup) {
+        return new Markup(markupInPercents.add(markup.markupInPercents));
     }
 }
