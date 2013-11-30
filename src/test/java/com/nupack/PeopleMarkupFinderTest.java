@@ -31,7 +31,7 @@ public class PeopleMarkupFinderTest {
     }
 
     @Test
-    public void shouldCorrectlyCalculateMarkupWhenSinglePeopleInvolved() {
+    public void shouldCorrectlyCalculateMarkupWhenSinglePersonInvolved() {
         Markup result = peopleMarkupCalculator.find(jobWithPeople(1));
         assertBigDecimalEquals(result.getMarkupInPercents(), "1.2");
     }
