@@ -1,13 +1,14 @@
 package com.nupack;
 
-import java.math.BigDecimal;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Material markup calculator.
  */
 public class MaterialMarkupCalculator implements MarkupCalculator {
 
-    public BigDecimal calculate(Job job) {
-        return null;
+    @NotNull
+    public Job calculate(@NotNull Job job) {
+        return job;
     }
 }

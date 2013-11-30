@@ -1,5 +1,7 @@
 package com.nupack;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.math.BigDecimal;
 
 /**
@@ -15,10 +17,11 @@ public enum Material {
 
     private final BigDecimal markup;
 
-    private Material(BigDecimal markup) {
+    private Material(@NotNull BigDecimal markup) {
         this.markup = markup;
     }
 
+    @NotNull
     public BigDecimal getMarkup() {
         return markup;
     }

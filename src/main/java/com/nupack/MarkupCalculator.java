@@ -1,10 +1,11 @@
 package com.nupack;
 
-import java.math.BigDecimal;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Defines generic markup calculation contract.
  */
 public interface MarkupCalculator {
-    BigDecimal calculate(Job job);
+    @NotNull
+    Job calculate(@NotNull Job job);
 }

@@ -1,5 +1,7 @@
 package com.nupack;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -14,7 +16,8 @@ public class SummaryMarkupCalculator implements MarkupCalculator {
         this.markupCalculators = markupCalculators;
     }
 
-    public BigDecimal calculate(Job job) {
+    @NotNull
+    public BigDecimal calculate(@NotNull Job job) {
         return null;
     }
 }

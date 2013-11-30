@@ -1,5 +1,7 @@
 package com.nupack;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.math.BigDecimal;
 
 /**
@@ -12,9 +14,7 @@ public class Job {
     private final int numberOfPeople;
     private final Material material;
 
-    public Job(BigDecimal basePrice, int numberOfPeople, Material material) {
-
-
+    Job(@NotNull BigDecimal basePrice, int numberOfPeople, @NotNull Material material) {
         this.basePrice = basePrice;
         this.numberOfPeople = numberOfPeople;
         this.material = material;
